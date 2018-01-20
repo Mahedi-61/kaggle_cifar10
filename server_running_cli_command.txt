@@ -1,0 +1,16 @@
+#first login
+floyd login
+
+#create project in floydhub and the write
+floyd init kaggle_cifar10 
+
+
+floyd run --env keras --data mahedi/datasets/kaggle-cifar-10-dataset/2:input --data mahedi/datasets/inception_v3_tf_weights/1:weight --gpu  "python train.py"
+
+
+floyd run --env keras --data mahedi/datasets/kaggle-cifar-10-dataset/2:input --data mahedi/datasets/inception_v4_tf_weights/2:weight --gpu  "python train.py"
+
+
+
+floyd run --env keras --data mahedi/datasets/kaggle-cifar-10-dataset/3:input  --data mahedi/projects/kaggle_cifar10/13/output:model_1   --gpu "python test.py"
+
